@@ -2,7 +2,7 @@ const express = require('express')
 
 const app = express();
 
-const port = 8000;
+const port = 8800;
 const database = require('./config/db')
 const path = require('path')
 

@@ -13,6 +13,10 @@ const userschama=mongoose.Schema({
     image:{
         type:String,
         require:true
+    },
+    qty : {
+        type:String,
+        require:true
     }
 
 })

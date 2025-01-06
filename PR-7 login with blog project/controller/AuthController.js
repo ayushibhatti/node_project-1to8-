@@ -68,11 +68,12 @@ const addblog = (req, res) => {
 
 const addblougesdata = async (req, res) => {
     try {
-        const { name, description } = req.body
+        const { name, description,qty } = req.body
         const user = await bloguser.create({
             name: name,
             description: description,
-            image: req.file.path
+            image: req.file.path,
+            qty:qty,
         })
         return res.redirect('view')
     } catch (err) {
@@ -149,21 +150,7 @@ const logout = (req, res) => {
     return res.redirect('/');
 }
 
-const readmore = async (req,res) => {
-    try {
-        let id = req.params.id
-        console.log(id);
-       
-        
-        let single = await bloguser.findById(id);
-        return res.render('readmore', {
-            single
-        })
-    } catch (err) {
-        console.log(err);
-        return false;
-    }
-}
+
 
 
 module.exports = {
